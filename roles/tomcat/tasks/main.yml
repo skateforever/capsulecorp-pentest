@@ -46,10 +46,10 @@
     state: restarted
   when: tomcat_installed.changed
     
-- include: firewall_8080.yml
+- include_tasks: firewall_8080.yml
   when: tomcat_installed.changed
 
-- include: firewall_8009.yml
+- include_tasks: firewall_8009.yml
   when: tomcat_installed.changed
 
 

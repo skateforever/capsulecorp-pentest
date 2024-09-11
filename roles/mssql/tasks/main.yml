@@ -31,11 +31,11 @@
     accept_license: true
   register: powershell_modules
 
-- include: pre_reqs.yml
+- include_tasks: pre_reqs.yml
   when: powershell_modules.changed
 
-- include: accounts.yml
-- include: prepare_install.yml
-- include: install.yml
-- include: firewall.yml
-- include: configure.yml
+- include_tasks: accounts.yml
+- include_tasks: prepare_install.yml
+- include_tasks: install.yml
+- include_tasks: firewall.yml
+- include_tasks: configure.yml

@@ -4,10 +4,10 @@
   include_vars: "jenkins.yml"
 
 # Setup/Install tasks.
-- include: install_packages.yml
+- include_tasks: install_packages.yml
 
 # Configure Jenkins init settings.
-- include: settings.yml
+- include_tasks: settings.yml
   when: jenkins_install_package_win.changed
 
 # Make sure Jenkins starts and configures
@@ -22,7 +22,7 @@
   when: jenkins_install_package_win.changed
 
 # Update Jenkins and install configured plugins.
-- include: plugins.yml
+- include_tasks: plugins.yml
   when: jenkins_install_package_win.changed
 
 #and finaly restart jenkins
